@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>สื่อโต้ตอบ: อัตราส่วนตรีโกณมิติ ม.3</title>
+<style>
+:root{--navy:#45318f;--blue:#5476f2;--teal:#13b8a6;--gold:#ffb938;--ink:#293653;--muted:#68758f;--paper:#f5f3ff;--line:#e3def8}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Tahoma,"Noto Sans Thai",sans-serif;line-height:1.6}
+header{background:linear-gradient(120deg,#7456df 0%,#4f8df7 52%,#35c9c0 100%);color:white;padding:28px 18px 32px;text-align:center}
+header h1{margin:0;font-size:clamp(24px,4vw,36px)}header p{margin:8px 0 0;color:#e4f2ff}
+main{max-width:1050px;margin:22px auto;padding:0 16px 40px}
+.card{background:white;border:1px solid var(--line);border-radius:18px;padding:20px;margin:16px 0;box-shadow:0 5px 18px #17324d0c}
+h2{font-size:21px;color:var(--navy);margin:0 0 12px}h3{margin:0 0 8px;color:var(--navy)}
+.pills{display:flex;gap:8px;flex-wrap:wrap}.pill{background:#eeeaff;color:#5942b5;border-radius:30px;padding:6px 12px;font-size:14px}
+.objective{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.objective div{background:linear-gradient(135deg,#f2efff,#edfbff);border-radius:12px;padding:12px}
+.lab{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:center}
+svg{width:100%;height:auto;display:block;background:linear-gradient(145deg,#fff 0%,#f4f8ff 100%);border:2px solid #e5e1fb;border-radius:14px}
+.controls{background:linear-gradient(145deg,#f2efff,#effcff);border-radius:14px;padding:16px}
+input[type=range]{width:100%;accent-color:var(--blue)}
+.value{font-size:26px;font-weight:bold;color:var(--blue);font-variant-numeric:tabular-nums}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.metric{background:white;border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center}
+.metric b{display:block;color:var(--teal);font-size:20px}
+.formula-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.formula{border:1px solid var(--line);border-radius:12px;padding:14px;background:#f8f7ff}
+.formula strong{display:block;color:var(--blue);font-size:18px}
+.note{background:#fff6dc;border-left:5px solid #ffb938;padding:12px 14px;border-radius:8px}
+button{border:0;border-radius:999px;padding:11px 19px;background:linear-gradient(100deg,#6c5ce7,#438cf5);color:white;font-weight:bold;cursor:pointer;font-size:15px}
+button:hover{filter:brightness(.94)}button.secondary{background:#eae7fb;color:#51409b}
+.question{padding:14px;border:1px solid var(--line);border-radius:12px;margin:12px 0}
+.question p{font-weight:bold;margin:0 0 8px}.question label{display:block;padding:5px 0;cursor:pointer}
+.feedback{margin-top:8px;font-weight:bold}.correct{color:#16834a}.wrong{color:#bd4b35}
+#result{font-size:18px;font-weight:bold;margin-top:12px}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:10px}
+@media(max-width:720px){.lab{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr 1fr}.card{padding:16px}}
+
+.card{border-radius:22px;box-shadow:0 9px 26px rgba(91,75,170,.10);transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{box-shadow:0 13px 30px rgba(91,75,170,.15)}
+h2{display:flex;align-items:center;gap:8px}
+.value{color:#6554dc}
+.metric{background:linear-gradient(180deg,#fff,#f7f6ff);border-color:#e5e0fb}
+.metric b{color:#0eaa9b}
+.formula{background:linear-gradient(145deg,#fff,#f4f8ff);border-color:#e4e1fb}
+.formula strong{color:#5b55d8}
+.question{background:linear-gradient(145deg,#fff,#fbfaff);border-color:#e4e1fb}
+.pill{background:#eae8ff;color:#5141a8}
+header{position:relative;overflow:hidden}
+header:after{content:"✦  ✧  ✦";position:absolute;right:5%;top:12px;font-size:30px;color:#ffffff70;letter-spacing:12px}
+button:focus-visible,input:focus-visible{outline:3px solid #ffca55;outline-offset:3px}
+
+</style>
+</head>
+<body>
+<header>
+  <h1>🔺 สำรวจอัตราส่วนตรีโกณมิติ</h1>
+  <p>คณิตศาสตร์ ชั้นมัธยมศึกษาปีที่ 3 · ทดลอง ปรับมุม สังเกต และค้นพบความสัมพันธ์</p>
+</header>
+<main>
+<section class="card">
+  <h2>🎯 จุดประสงค์การเรียนรู้</h2>
+  <div class="objective">
+    <div><b>ทดลอง</b><br>ปรับขนาดมุมของสามเหลี่ยมมุมฉากและสังเกตการเปลี่ยนแปลง</div>
+    <div><b>สังเกต</b><br>เปรียบเทียบความยาวด้านตรงข้าม ด้านประชิด และด้านตรงข้ามมุมฉาก</div>
+    <div><b>วิเคราะห์</b><br>อธิบายความสัมพันธ์ของ sin, cos และ tan ได้</div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>1. ทดลองปรับมุมของสามเหลี่ยมมุมฉาก</h2>
+  <p>เลื่อนแถบมุม θ แล้วสังเกตว่าความยาวด้านต่าง ๆ และค่าอัตราส่วนเปลี่ยนไปอย่างไร (กำหนดด้านตรงข้ามมุมฉากยาว 10 หน่วย)</p>
+  <div class="lab">
+    <div>
+      <svg id="triangle" viewBox="0 0 520 340" role="img" aria-label="ภาพสามเหลี่ยมมุมฉากที่ปรับมุมได้">
+        <line id="base" x1="70" y1="270" x2="430" y2="270" stroke="#2878b8" stroke-width="5" stroke-linecap="round"/>
+        <line id="height" x1="430" y1="270" x2="430" y2="80" stroke="#18a6a6" stroke-width="5" stroke-linecap="round"/>
+        <line id="hyp" x1="70" y1="270" x2="430" y2="80" stroke="#e49b26" stroke-width="5" stroke-linecap="round"/>
+        <path id="rightAngle" d="M410 270 L410 250 L430 250" fill="none" stroke="#64748b" stroke-width="2"/>
+        <path id="thetaArc" d="" fill="none" stroke="#17324d" stroke-width="2"/>
+        <text x="240" y="300" fill="#2878b8" font-size="16" text-anchor="middle">ด้านประชิด</text>
+        <text id="oppLabel" x="450" y="175" fill="#138b8b" font-size="16">ด้านตรงข้าม</text>
+        <text id="hypLabel" x="210" y="150" fill="#b87912" font-size="16" transform="rotate(-28 210 150)">ด้านตรงข้ามมุมฉาก</text>
+        <text id="thetaLabel" x="110" y="252" fill="#17324d" font-size="18">θ</text>
+        <text x="440" y="285" fill="#64748b" font-size="13">90°</text>
+      </svg>
+    </div>
+    <div class="controls">
+      <label for="angle"><b>ปรับขนาดมุม θ</b></label>
+      <div class="value"><span id="angleValue">35</span>°</div>
+      <input id="angle" type="range" min="10" max="80" value="35" step="1">
+      <div class="pills"><span class="pill">มุมต่ำสุด 10°</span><span class="pill">มุมสูงสุด 80°</span></div>
+      <div class="metrics">
+        <div class="metric"><small>ด้านตรงข้าม</small><b id="opp">5.74</b></div>
+        <div class="metric"><small>ด้านประชิด</small><b id="adj">8.19</b></div>
+        <div class="metric"><small>ด้านฉาก</small><b>10.00</b></div>
+      </div>
+      <div class="note" style="margin-top:12px"><b>ชวนคิด:</b> เมื่อมุม θ เพิ่มขึ้น ด้านตรงข้ามมุม θ มีแนวโน้มเปลี่ยนแปลงอย่างไร?</div>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>2. ค้นพบอัตราส่วนตรีโกณมิติ</h2>
+  <p>สำหรับมุม θ ในสามเหลี่ยมมุมฉาก อัตราส่วนตรีโกณมิติพื้นฐานมี 3 ค่า</p>
+  <div class="formula-grid">
+    <div class="formula"><strong>sin θ</strong> = ด้านตรงข้ามมุม θ ÷ ด้านตรงข้ามมุมฉาก<br><b id="sinVal">0.574</b></div>
+    <div class="formula"><strong>cos θ</strong> = ด้านประชิดมุม θ ÷ ด้านตรงข้ามมุมฉาก<br><b id="cosVal">0.819</b></div>
+    <div class="formula"><strong>tan θ</strong> = ด้านตรงข้ามมุม θ ÷ ด้านประชิดมุม θ<br><b id="tanVal">0.700</b></div>
+  </div>
+  <p class="note" style="margin-top:14px"><b>จำง่ายด้วย SOH–CAH–TOA</b><br>SOH: sin = Opposite / Hypotenuse · CAH: cos = Adjacent / Hypotenuse · TOA: tan = Opposite / Adjacent</p>
+</section>
+
+<section class="card">
+  <h2>3. สรุปสิ่งที่สังเกตได้</h2>
+  <ul>
+    <li>เมื่อมุม θ เปลี่ยน ความยาวด้านตรงข้ามและด้านประชิดจะเปลี่ยนตาม</li>
+    <li>เมื่อกำหนดมุม θ ไว้ อัตราส่วนของด้านทั้งสองจะมีค่าเดิม ไม่ขึ้นกับขนาดของสามเหลี่ยมที่คล้ายกัน</li>
+    <li>ค่า sin θ และ cos θ อยู่ระหว่าง 0 ถึง 1 สำหรับมุมแหลม ส่วน tan θ เป็นอัตราส่วนด้านตรงข้ามต่อด้านประชิด</li>
+  </ul>
+</section>
+
+<section class="card" id="quiz">
+  <h2>4. ตรวจสอบความเข้าใจท้ายกิจกรรม</h2>
+  <p>เลือกคำตอบที่ถูกต้องทั้ง 3 ข้อ แล้วกด “ตรวจคำตอบ”</p>
+  <div class="question" data-answer="b" data-explain="sin θ คืออัตราส่วนด้านตรงข้ามมุม θ ต่อด้านตรงข้ามมุมฉาก (SOH)">
+    <p>ข้อ 1. ข้อใดคือความหมายของ sin θ</p>
+    <label><input type="radio" name="q1" value="a"> ก. ด้านประชิด ÷ ด้านตรงข้ามมุมฉาก</label>
+    <label><input type="radio" name="q1" value="b"> ข. ด้านตรงข้ามมุม θ ÷ ด้านตรงข้ามมุมฉาก</label>
+    <label><input type="radio" name="q1" value="c"> ค. ด้านตรงข้ามมุม θ ÷ ด้านประชิด</label>
+    <div class="feedback"></div>
+  </div>
+  <div class="question" data-answer="c" data-explain="tan θ = ด้านตรงข้ามมุม θ ÷ ด้านประชิดมุม θ (TOA)">
+    <p>ข้อ 2. ถ้าด้านตรงข้ามมุม θ ยาว 6 หน่วย และด้านประชิดยาว 8 หน่วย ค่า tan θ เท่ากับเท่าใด</p>
+    <label><input type="radio" name="q2" value="a"> ก. 1.33</label>
+    <label><input type="radio" name="q2" value="b"> ข. 2.00</label>
+    <label><input type="radio" name="q2" value="c"> ค. 0.75</label>
+    <div class="feedback"></div>
+  </div>
+  <div class="question" data-answer="a" data-explain="เมื่อมุมแหลม θ เพิ่มขึ้นในช่วง 0°–90° ค่า sin θ จะเพิ่มขึ้น">
+    <p>ข้อ 3. เมื่อปรับมุม θ จาก 20° เป็น 60° ค่า sin θ เปลี่ยนแปลงอย่างไร</p>
+    <label><input type="radio" name="q3" value="a"> ก. เพิ่มขึ้น</label>
+    <label><input type="radio" name="q3" value="b"> ข. ลดลง</label>
+    <label><input type="radio" name="q3" value="c"> ค. คงเดิม</label>
+    <div class="feedback"></div>
+  </div>
+  <button id="check">ตรวจคำตอบ</button>
+  <button class="secondary" id="reset" type="button">ทำแบบทดสอบอีกครั้ง</button>
+  <div id="result" aria-live="polite"></div>
+</section>
+<footer>สื่อการเรียนรู้คณิตศาสตร์ ม.3 · อัตราส่วนตรีโกณมิติ · ใช้งานได้โดยไม่ต้องเชื่อมต่ออินเทอร์เน็ต</footer>
+</main>
+<script>
+const angle=document.getElementById('angle');
+function update(){
+ const deg=Number(angle.value), rad=deg*Math.PI/180, hyp=10;
+ const opp=hyp*Math.sin(rad), adj=hyp*Math.cos(rad);
+ document.getElementById('angleValue').textContent=deg;
+ document.getElementById('opp').textContent=opp.toFixed(2);
+ document.getElementById('adj').textContent=adj.toFixed(2);
+ document.getElementById('sinVal').textContent=Math.sin(rad).toFixed(3);
+ document.getElementById('cosVal').textContent=Math.cos(rad).toFixed(3);
+ document.getElementById('tanVal').textContent=Math.tan(rad).toFixed(3);
+ // Keep the hypotenuse fixed; scale the drawing to fit the SVG.
+ const x0=70,y0=270,scale=29, x1=x0+adj*scale, y1=y0-opp*scale;
+ document.getElementById('base').setAttribute('x2',x1);
+ document.getElementById('height').setAttribute('x1',x1);
+ document.getElementById('height').setAttribute('x2',x1);
+ document.getElementById('height').setAttribute('y2',y1);
+ document.getElementById('hyp').setAttribute('x2',x1);
+ document.getElementById('hyp').setAttribute('y2',y1);
+ document.getElementById('rightAngle').setAttribute('d',`M${x1-20} ${y0} L${x1-20} ${y0-20} L${x1} ${y0-20}`);
+ document.getElementById('oppLabel').setAttribute('x',Math.min(x1+12,455));
+ document.getElementById('oppLabel').setAttribute('y',(y0+y1)/2);
+ document.getElementById('thetaLabel').textContent=deg+'°';
+ document.getElementById('thetaLabel').setAttribute('x',x0+43);
+ document.getElementById('thetaLabel').setAttribute('y',y0-7);
+ document.getElementById('hypLabel').setAttribute('x',(x0+x1)/2-45);
+ document.getElementById('hypLabel').setAttribute('y',(y0+y1)/2-12);
+ document.getElementById('hypLabel').setAttribute('transform',`rotate(${-deg} ${(x0+x1)/2-45} ${(y0+y1)/2-12})`);
+}
+angle.addEventListener('input',update); update();
+document.getElementById('check').addEventListener('click',()=>{
+ let score=0;
+ document.querySelectorAll('.question').forEach((q,i)=>{
+  const selected=q.querySelector('input:checked'), fb=q.querySelector('.feedback');
+  if(!selected){fb.textContent='กรุณาเลือกคำตอบ';fb.className='feedback wrong';return;}
+  if(selected.value===q.dataset.answer){score++;fb.textContent='✓ ถูกต้อง — '+q.dataset.explain;fb.className='feedback correct';}
+  else{fb.textContent='✗ ยังไม่ถูก — '+q.dataset.explain;fb.className='feedback wrong';}
+ });
+ document.getElementById('result').textContent=`คะแนนของคุณ ${score} / 3 คะแนน`;
+});
+document.getElementById('reset').addEventListener('click',()=>{
+ document.querySelectorAll('.question input').forEach(x=>x.checked=false);
+ document.querySelectorAll('.feedback').forEach(x=>{x.textContent='';x.className='feedback';});
+ document.getElementById('result').textContent='';
+});
+</script>
+</body>
+</html>
